@@ -27,19 +27,19 @@ body {
 }
 
 .control.tv-quarto{
-    top: 259px;
-    left: 953px;
+    top: 265px;
+    left: 924px;
 }
 
 .control.tv-sala{
-    top: 514px;
-    left: 644px;
+    top: 512px;
+    left: 619px;
     transform: rotate(-90deg);
 }
 
 .control.tv-quarto-visita{
-    top: 1173px;
-    left: 394px;
+    top: 1157px;
+    left: 374px;
     transform: rotate(-90deg);
 }
 
