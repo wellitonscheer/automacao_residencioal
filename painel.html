@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.js">
+    <link rel="stylesheet" href="jquery-3.6.0.min.js">
+    
     <title>Painel de controle</title>
 </head>
 <body>
@@ -18,8 +21,8 @@
         <h1>Painel de controle</h1>
         <div class="wrapper">
             <img src="PLANTA_CASA.jpg" alt="">
-            <div class="control fridge">
-                <button>Ligar</button>
+            <div id="fridge"class="control fridge">
+                <button id="btn_fridge">Ligar</button>
             </div>
             <div class="control tv-quarto">
                 <button>Ligar</button>
@@ -46,7 +49,7 @@
                 <button>Ligar</button>
             </div>
             <div class="control sensor-temperatura">
-                <button>27° <i class="fa-solid fa-temperature-low"></i></button>
+                <button>Ligar <i class="fa-solid fa-temperature-low"></i></button>
             </div>
             
         </div>

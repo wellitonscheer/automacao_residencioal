@@ -26,6 +26,12 @@ body {
     left: 37px;
 }
 
+.control.fridge_desligado{
+    top: 275px;
+    left: 37px;
+    background-color: red;
+}
+
 .control.tv-quarto{
     top: 259px;
     left: 953px;
@@ -81,10 +87,13 @@ body {
 
 .control button{
     background-color: blue;
-    color: white;
     border-radius: 1rem;
     border: none;
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
     color: #fff;
+}
+
+button:hover{
+    cursor:pointer;
 }
