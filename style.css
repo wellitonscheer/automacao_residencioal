@@ -1,0 +1,90 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.wrapper{
+    position: relative;
+}
+
+.wrapper>img:nth-child(1){
+    width: 100%;
+    opacity: 0.5;            
+}
+
+.wrapper .control{
+    position: absolute;
+}
+
+.control.fridge{
+    top: 275px;
+    left: 37px;
+}
+
+.control.tv-quarto{
+    top: 259px;
+    left: 953px;
+}
+
+.control.tv-sala{
+    top: 514px;
+    left: 644px;
+    transform: rotate(-90deg);
+}
+
+.control.tv-quarto-visita{
+    top: 1173px;
+    left: 394px;
+    transform: rotate(-90deg);
+}
+
+.control.porta-garagem{
+    top: 1415px;
+    left: 993px;
+}
+
+.control.luz-quarto-esquerda{
+    top: 695px;
+    left: 776px;
+}
+
+.control.luz-quarto-direita{
+    top: 695px;
+    left: 1084px;
+}
+
+.control.luz-quarto-visita-direita{
+    top: 1020px;
+    left: 88px;
+    transform: rotate(-90deg);
+}
+
+.control.luz-quarto-visita-esquerda{
+    top: 1330px;
+    left: 88px;
+    transform: rotate(-90deg);
+}
+
+.control.sensor-temperatura {
+    top: 230px;
+    left: 388px;
+}
+
+.control.sensor-temperatura button{
+    font-size: 1rem;
+}
+
+.control button{
+    background-color: blue;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+}
