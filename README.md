@@ -1,2 +1,2 @@
-# automacao_residencioal
+# automacao_residencial
 ## sei la

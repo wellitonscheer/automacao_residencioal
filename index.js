@@ -16,3 +16,36 @@ function onToggle() {
 $(document).ready(function(){
     $("#fridge").click(onToggle());
 });
+
+$(document).ready(function(){
+    $("#tv-quarto").click(onToggle());
+});
+
+$(document).ready(function(){
+    $("#tv-sala").click(onToggle());
+});
+
+$(document).ready(function(){
+    $("#tv-quarto-visita").click(onToggle());
+});
+
+$(document).ready(function(){
+    $("#porta-garagem").click(onToggle());
+});
+
+$(document).ready(function(){
+    $("#luz-quarto-esquerda").click(onToggle());
+});
+
+$(document).ready(function(){
+    $("#luz-quarto-direita").click(onToggle());
+});
+
+$(document).ready(function(){
+    $("#luz-quarto-visita-direita").click(onToggle());
+});
+
+$(document).ready(function(){
+    $("#luz-quarto-visita-esquerda").click(onToggle());
+});
+
