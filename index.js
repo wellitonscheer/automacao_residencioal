@@ -2,6 +2,7 @@ const blue = "rgb(0, 0, 255)";
 const red = "rgb(255, 0, 0)";
 const ligado = "Ligado"
 const desligado = "Desligado"
+const fechado = "Fechado"
 
 function onToggle() {
     return function() {
@@ -31,6 +32,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#porta-garagem").click(onToggle());
+    const estado = element.css("background-color") === red ? ligado : fechado;
+    element.css("background-color", newColor);
+        element.text(estado);
 });
 
 $(document).ready(function(){

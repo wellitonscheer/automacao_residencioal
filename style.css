@@ -4,6 +4,7 @@ body {
   padding: 0;
   font-family: "Inter", sans-serif;
 }
+
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -77,6 +78,11 @@ body {
 .control.sensor-temperatura {
     top: 230px;
     left: 388px;
+}
+
+.control.alarme {
+    top: 663px;
+    left: 412px;
 }
 
 .control.sensor-temperatura button{
