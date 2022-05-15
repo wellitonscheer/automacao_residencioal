@@ -26,9 +26,7 @@ body {
     left: 37px;
 }
 
-.control.fridge_desligado{
-    top: 275px;
-    left: 37px;
+.control.fridge.desligado{
     background-color: red;
 }
 
@@ -92,8 +90,5 @@ body {
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
     color: #fff;
-}
-
-button:hover{
-    cursor:pointer;
+    cursor: pointer;
 }
