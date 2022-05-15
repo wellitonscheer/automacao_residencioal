@@ -25,16 +25,6 @@ $(document).ready(function(){
     $("#tv-quarto").click(onToggle());
     $("#tv-sala").click(onToggle());
     $("#tv-quarto-visita").click(onToggle());
-});
-
-$(document).ready(function(){
-    $("#porta-garagem").click(onToggle());
-    const estado = element.css("background-color") === red ? ligado : fechado;
-    element.css("background-color", newColor);
-        element.text(estado);
-});
-
-$(document).ready(function(){
     $("#porta-garagem").click(onToggle(true));
     $("#luz-quarto-esquerda").click(onToggle());
     $("#luz-quarto-direita").click(onToggle());
