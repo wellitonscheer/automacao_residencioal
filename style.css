@@ -32,7 +32,7 @@ body {
 
 .control.tv-quarto{
     top: 265px;
-    left: 924px;
+    left: 915px;
 }
 
 .control.tv-sala{
@@ -48,28 +48,28 @@ body {
 }
 
 .control.porta-garagem{
-    top: 1415px;
+    top: 1129px;
     left: 993px;
 }
 
 .control.luz-quarto-esquerda{
     top: 695px;
-    left: 776px;
+    left: 758px;
 }
 
 .control.luz-quarto-direita{
     top: 695px;
-    left: 1084px;
+    left: 1068px;
 }
 
 .control.luz-quarto-visita-direita{
-    top: 1020px;
+    top: 1011px;
     left: 88px;
     transform: rotate(-90deg);
 }
 
 .control.luz-quarto-visita-esquerda{
-    top: 1330px;
+    top: 1323px;
     left: 88px;
     transform: rotate(-90deg);
 }
