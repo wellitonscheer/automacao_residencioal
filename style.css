@@ -97,4 +97,9 @@ body {
     padding: 0.5rem 1rem;
     color: #fff;
     cursor: pointer;
+    transition: font-size 0.5s;
+}
+
+.control button:hover{
+    font-size: 1.5rem;
 }
