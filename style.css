@@ -54,7 +54,9 @@ body {
 
 .control.porta-garagem{
     top: 1129px;
-    left: 993px;
+    left: 1040px;
+    transform: rotate(-90deg);
+    
 }
 
 .control.luz-quarto-esquerda{
