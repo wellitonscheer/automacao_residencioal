@@ -66,18 +66,18 @@ body {
 
 .control.luz-quarto-direita{
     top: 695px;
-    left: 1068px;
+    left: 1034px;
 }
 
 .control.luz-quarto-visita-direita{
     top: 1011px;
-    left: 88px;
+    left: 69px;
     transform: rotate(-90deg);
 }
 
 .control.luz-quarto-visita-esquerda{
     top: 1323px;
-    left: 88px;
+    left: 69px;
     transform: rotate(-90deg);
 }
 
