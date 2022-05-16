@@ -30,4 +30,5 @@ $(document).ready(function(){
     $("#luz-quarto-direita").click(onToggle());
     $("#luz-quarto-visita-direita").click(onToggle());
     $("#luz-quarto-visita-esquerda").click(onToggle());
+    $("#alarme").click(onToggle());
 });
