@@ -11,14 +11,14 @@ function onToggle(abertoFechado) {
     return function() {
         const element = $(this);
         const newColor = element.css("background-color") === red ? blue : red;
-        const novoLeft = element.css("background-color") === red ? leftLigado : leftDesligado;
+        //const novoLeft = element.css("background-color") === red ? leftLigado : leftDesligado;
         let estado;
         if(abertoFechado){
             estado = element.css("background-color") === red ? aberto : fechado;
         }else{
             estado = element.css("background-color") === red ? ligado : desligado;
-            $(".control.luz-quarto-visita-direita").css("left", novoLeft);
-            console.log($(".control.luz-quarto-visita-direita").css("left").toString());
+            // $(".control.luz-quarto-visita-direita").css("left", novoLeft);
+            // console.log($(".control.luz-quarto-visita-direita").css("left").toString());
         }
         element.css("background-color", newColor);
         element.children("span").eq(0).text(estado);
