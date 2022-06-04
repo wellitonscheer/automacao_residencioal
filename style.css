@@ -59,19 +59,19 @@ body {
     
 }
 
-.control.luz-quarto-esquerda{
+.control.luz_azul{
     top: 695px;
     left: 758px;
 }
 
-.control.luz-quarto-direita{
-    top: 695px;
-    left: 1034px;
+.control.luz_branca{
+    top: 691px;
+    left: 1015px;
 }
 
-.control.luz-quarto-visita-direita{
-    top: 1011px;
-    left: 69px;
+.control.luz_vermelha{
+    top: 1013px;
+    left: 34px;
     transform: rotate(-90deg);
 }
 

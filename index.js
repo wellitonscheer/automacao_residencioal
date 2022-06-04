@@ -10,6 +10,7 @@ const leftDesligado = "54px";
 function onToggle(abertoFechado) {
     return function() {
         const element = $(this);
+        const path = element.css("background-color") === red ? element.attr("id") : "desliga_" + element.attr("id");
         const newColor = element.css("background-color") === red ? blue : red;
         //const novoLeft = element.css("background-color") === red ? leftLigado : leftDesligado;
         let estado;
@@ -21,7 +22,8 @@ function onToggle(abertoFechado) {
             // console.log($(".control.luz-quarto-visita-direita").css("left").toString());
         }
         element.css("background-color", newColor);
-        element.children("span").eq(0).text(estado);
+        //element.children("span").eq(0).text(estado);
+        Chamar_Dados(path);
     };
 }
 
@@ -31,10 +33,25 @@ $(document).ready(function(){
     $("#tv-sala").click(onToggle());
     $("#tv-quarto-visita").click(onToggle());
     $("#porta-garagem").click(onToggle(true));
-    $("#luz-quarto-esquerda").click(onToggle());
-    $("#luz-quarto-direita").click(onToggle());
-    $("#luz-quarto-visita-direita").click(onToggle());
+    $("#luz_azul").click(onToggle());
+    $("#luz_branca").click(onToggle());
+    $("#luz_vermelha").click(onToggle());
     //$(".control.luz-quarto-visita-direita").click(onToggle());
     $("#luz-quarto-visita-esquerda").click(onToggle());
     $("#alarme").click(onToggle());
 });
+
+function Chamar_Dados(url){
+    fetch(`http://localhost:5000/HelloWorld/acao?path=${url}`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(r => r.json())
+        .then(dados => {
+            console.log(dados.resposta);
+            //document.querySelector("#fridge").innerHTML = dados.resposta;
+        });
+}
