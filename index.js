@@ -42,7 +42,7 @@ $(document).ready(function(){
 });
 
 function Chamar_Dados(url){
-    fetch(`http://localhost:5000/HelloWorld/acao?path=${url}`, {
+    fetch(`https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=${url}`, {
         method: "GET",
         headers: {
             "Accept": "application/json",
@@ -51,8 +51,8 @@ function Chamar_Dados(url){
     })
         .then(r => r.json())
         .then(dados => {
-            console.log(dados.resposta);
-            //document.querySelector("#fridge").innerHTML = dados.resposta;
+            //console.log(dados.resposta);
+            document.querySelector("#fridge").innerHTML = dados.resposta;
         });
 }
 
