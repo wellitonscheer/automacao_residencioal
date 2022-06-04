@@ -19,7 +19,7 @@ function onToggle(abertoFechado) {
         }else{
             estado = element.css("background-color") === red ? ligado : desligado;
             // $(".control.luz-quarto-visita-direita").css("left", novoLeft);
-            // console.log($(".control.luz-quarto-visita-direita").css("left").toString());
+            // // console.log($(".control.luz-quarto-visita-direita").css("left").toString());
         }
         element.css("background-color", newColor);
         //element.children("span").eq(0).text(estado);
