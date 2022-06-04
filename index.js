@@ -55,3 +55,9 @@ function Chamar_Dados(url){
             //document.querySelector("#fridge").innerHTML = dados.resposta;
         });
 }
+
+//setTimeout(functionRef, delay)
+
+// function Get_Temperatura(){
+
+// }
