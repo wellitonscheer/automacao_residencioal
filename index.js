@@ -23,6 +23,7 @@ function onToggle(abertoFechado) {
         }
         element.css("background-color", newColor);
         //element.children("span").eq(0).text(estado);
+        //console.log(path);
         Chamar_Dados(path);
     };
 }
@@ -40,24 +41,3 @@ $(document).ready(function(){
     $("#luz-quarto-visita-esquerda").click(onToggle());
     $("#alarme").click(onToggle());
 });
-
-function Chamar_Dados(url){
-    fetch(`https://localhost:5000/HelloWorld/acao?path=${url}`, {
-        method: "GET",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        }
-    })
-        .then(r => r.json())
-        .then(dados => {
-            //console.log(dados.resposta);
-            document.querySelector("#fridge").innerHTML = dados.resposta;
-        });
-}
-
-//setTimeout(functionRef, delay)
-
-// function Get_Temperatura(){
-
-// }
