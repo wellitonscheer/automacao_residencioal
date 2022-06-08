@@ -23,6 +23,7 @@ function onToggle(abertoFechado) {
         }
         element.css("background-color", newColor);
         //element.children("span").eq(0).text(estado);
+        //console.log(path);
         Chamar_Dados(path);
     };
 }
@@ -42,7 +43,7 @@ $(document).ready(function(){
 });
 
 function Chamar_Dados(url){
-    fetch(`https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=${url}`, {
+    fetch(`http://localhost:5000/HelloWorld/acao?path=${url}`, {
         method: "GET",
         headers: {
             "Accept": "application/json",
