@@ -41,3 +41,24 @@ $(document).ready(function(){
     $("#luz-quarto-visita-esquerda").click(onToggle());
     $("#alarme").click(onToggle());
 });
+
+function Chamar_Dados(url){
+    fetch(`http://localhost:5000/HelloWorld/acao?path=${url}`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(r => r.json())
+        .then(dados => {
+            //console.log(dados.resposta);
+            document.querySelector("#fridge").innerHTML = dados.resposta;
+        });
+}
+
+//setTimeout(functionRef, delay)
+
+// function Get_Temperatura(){
+
+// }
