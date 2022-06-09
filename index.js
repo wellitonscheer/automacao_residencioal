@@ -40,6 +40,7 @@ $(document).ready(function(){
     //$(".control.luz-quarto-visita-direita").click(onToggle());
     $("#luz-quarto-visita-esquerda").click(onToggle());
     //$("#alarme").click(onToggle());
+    //$("#alarme").click(clearInterval(temperatura1second));
 });
 
 function Chamar_Dados(url){
@@ -57,8 +58,18 @@ function Chamar_Dados(url){
         });
 }
 
-//setTimeout(functionRef, delay)
-
-// function Get_Temperatura(){
-
-// }
+const temperatura1second = window.setInterval(function(){
+    console.log("chamou a funcao")
+    fetch(`http://localhost:5000/HelloWorld/acao?path=temperatura`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(r => r.json())
+        .then(dados => {
+            console.log(dados.resposta);
+            document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
+        });
+},5000)
