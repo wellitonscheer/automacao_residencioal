@@ -15,7 +15,7 @@ body {
 } */
 
 .control.sensor-temperatura button{
-    font-size: 2rem;
+    font-size: 1.8rem;
     border-radius: 100rem;
     padding:0em;
     padding:.5rem 1rem;
@@ -32,7 +32,7 @@ body {
     background-color: red;
     border-radius: 1rem;
     border: none;
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     padding: 0.5rem 1rem;
     color: #fff;
     cursor: pointer;
@@ -43,7 +43,7 @@ body {
 }
 
 .control button:hover{
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .control.alarme button{
@@ -56,7 +56,7 @@ body {
 }
 
 /* .table th{
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     text-align: end;
 }
 .table td{
@@ -67,7 +67,7 @@ body {
 .table th{
     width: 300px;
     text-align: end;
-    font-size: 2.3rem;
+    font-size: 1.8rem;
 }
 .table td{
     width: 300px;
