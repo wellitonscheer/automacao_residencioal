@@ -10,9 +10,9 @@ body {
     opacity: 0.5;
 }
 
-.container div{
+/* .meu_container div{
     height: 60px;
-}
+} */
 
 .control.sensor-temperatura button{
     font-size: 2rem;
@@ -55,9 +55,19 @@ body {
     margin-right: auto;
 }
 
-.table th{
+/* .table th{
     font-size: 2.3rem;
     text-align: end;
+}
+.table td{
+    width: 300px;
+    text-align: start;
+} */
+
+.table th{
+    width: 300px;
+    text-align: end;
+    font-size: 2.3rem;
 }
 .table td{
     width: 300px;
