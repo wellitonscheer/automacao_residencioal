@@ -1,0 +1,65 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+.painel{
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+.container div{
+    height: 60px;
+}
+
+.control.sensor-temperatura button{
+    font-size: 2rem;
+    border-radius: 100rem;
+    padding:0em;
+    padding:.5rem 1rem;
+    color:white;
+    text-decoration:none;
+    box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+    border: solid 3px transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, blue, red);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.control button{
+    background-color: red;
+    border-radius: 1rem;
+    border: none;
+    font-size: 2.3rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: font-size 0.5s;
+}
+.control > span{
+    font-size: 2.5rem;
+}
+
+.control button:hover{
+    font-size: 2.5rem;
+}
+
+.control.alarme button{
+    background-color: blue;
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table th{
+    font-size: 2.3rem;
+    text-align: end;
+}
+.table td{
+    width: 300px;
+    text-align: start;
+}

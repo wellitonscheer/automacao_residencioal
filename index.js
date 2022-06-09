@@ -22,7 +22,7 @@ function onToggle(abertoFechado) {
             // // console.log($(".control.luz-quarto-visita-direita").css("left").toString());
         }
         element.css("background-color", newColor);
-        //element.children("span").eq(0).text(estado);
+        element.children("span").eq(0).text(estado);
         //console.log(path);
         Chamar_Dados(path);
     };
@@ -39,7 +39,7 @@ $(document).ready(function(){
     $("#luz_vermelha").click(onToggle());
     //$(".control.luz-quarto-visita-direita").click(onToggle());
     $("#luz-quarto-visita-esquerda").click(onToggle());
-    $("#alarme").click(onToggle());
+    //$("#alarme").click(onToggle());
 });
 
 function Chamar_Dados(url){
