@@ -40,7 +40,7 @@ $(document).ready(function(){
     //$(".control.luz-quarto-visita-direita").click(onToggle());
     $("#luz-quarto-visita-esquerda").click(onToggle());
     //$("#alarme").click(onToggle());
-    //$("#alarme").click(clearInterval(temperatura1second));
+    //$("#alarme").click(pegarCor());
 });
 
 function Chamar_Dados(url){
@@ -58,9 +58,16 @@ function Chamar_Dados(url){
         });
 }
 
-const temperatura1second = window.setInterval(function(){
-    console.log("chamou a funcao")
-    fetch(`http://localhost:5000/HelloWorld/acao?path=temperatura`, {
+
+const pegarCor = window.setInterval(function(){
+    var hex = document.getElementById("color").value;
+    //var hex = "#ff64c8";
+    var red = parseInt(hex[1]+hex[2],16);
+    var green = parseInt(hex[3]+hex[4],16);
+    var blue = parseInt(hex[5]+hex[6],16);
+    console.log(red,green,blue);
+
+    fetch(`http://localhost:5000/HelloWorld/acao?path=led_rgb%26red=${red}%26green=${green}%26blue=${blue}`, {
         method: "GET",
         headers: {
             "Accept": "application/json",
@@ -70,6 +77,23 @@ const temperatura1second = window.setInterval(function(){
         .then(r => r.json())
         .then(dados => {
             console.log(dados.resposta);
+            //document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
+        });
+},100)
+
+const temperatura1second = window.setInterval(function(){
+    console.log("chamou a funcao")
+    
+    fetch(`http://localhost:5000/HelloWorld/acao?path=temperatura`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(r => r.json())
+        .then(dados => {
+            //console.log(dados.resposta);
             document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
-},5000)
+},1000)
