@@ -6,6 +6,7 @@ const aberto = "Aberto";
 const fechado = "Fechado";
 const leftLigado = "69px";
 const leftDesligado = "54px";
+const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
 
 function onToggle(abertoFechado) {
     return function() {
@@ -44,7 +45,7 @@ $(document).ready(function(){
 });
 
 function Chamar_Dados(url){
-    fetch(`http://localhost:5000/HelloWorld/acao?path=${url}`, {
+    fetch(`${linkHeroku}${url}`, {
         method: "GET",
         headers: {
             "Accept": "application/json",
@@ -67,7 +68,7 @@ const pegarCor = window.setInterval(function(){
     var blue = parseInt(hex[5]+hex[6],16);
     console.log(red,green,blue);
 
-    fetch(`http://localhost:5000/HelloWorld/acao?path=led_rgb%26red=${red}%26green=${green}%26blue=${blue}`, {
+    fetch(`${linkHeroku}led_rgb%26red=${red}%26green=${green}%26blue=${blue}`, {
         method: "GET",
         headers: {
             "Accept": "application/json",
@@ -84,7 +85,7 @@ const pegarCor = window.setInterval(function(){
 const temperatura1second = window.setInterval(function(){
     console.log("chamou a funcao")
     
-    fetch(`http://localhost:5000/HelloWorld/acao?path=temperatura`, {
+    fetch(`${linkHeroku}temperatura`, {
         method: "GET",
         headers: {
             "Accept": "application/json",
