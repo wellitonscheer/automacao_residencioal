@@ -60,7 +60,7 @@ function Chamar_Dados(url){
 }
 
 
-const pegarCor = window.setInterval(function(){
+/*const pegarCor = window.setInterval(function(){
     var hex = document.getElementById("color").value;
     //var hex = "#ff64c8";
     var red = parseInt(hex[1]+hex[2],16);
@@ -80,7 +80,7 @@ const pegarCor = window.setInterval(function(){
             console.log(dados.resposta);
             //document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
-},100)
+},100)*/
 
 const temperatura1second = window.setInterval(function(){
     console.log("chamou a funcao")
