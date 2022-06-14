@@ -60,15 +60,15 @@ function Chamar_Dados(url){
 }
 
 
-/*const pegarCor = window.setInterval(function(){
+function pegarCor(){
     var hex = document.getElementById("color").value;
     //var hex = "#ff64c8";
-    var red = parseInt(hex[1]+hex[2],16);
-    var green = parseInt(hex[3]+hex[4],16);
-    var blue = parseInt(hex[5]+hex[6],16);
-    console.log(red,green,blue);
+    const Rred = parseInt(hex[1]+hex[2],16);
+    const Ggreen = parseInt(hex[3]+hex[4],16);
+    const Bblue = parseInt(hex[5]+hex[6],16);
+    console.log(Rred,Ggreen,Bblue);
 
-    fetch(`${linkHeroku}led_rgb%26red=${red}%26green=${green}%26blue=${blue}`, {
+    fetch(`${linkHeroku}led_rgb%26red=${Rred}%26green=${Ggreen}%26blue=${Bblue}`, {
         method: "GET",
         headers: {
             "Accept": "application/json",
@@ -80,7 +80,7 @@ function Chamar_Dados(url){
             console.log(dados.resposta);
             //document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
-},100)*/
+}
 
 const temperatura1second = window.setInterval(function(){
     console.log("chamou a funcao")
