@@ -99,22 +99,4 @@ const temperatura1second = window.setInterval(function(){
             //console.log(dados.resposta);
             document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
-},1000)
-
-function Login(){
-    let usuario = document.getElementById("usuario").value;;
-    let senha = document.getElementById("senha").value;;
-    console.log(usuario,senha);
-
-    fetch(`${linkC}login?usuario=${usuario}`, {
-        method: "GET",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        }
-    })
-        .then(r => r.json())
-        .then(dados => {
-            console.log(dados.resposta);
-        });
-}
+},10000)
