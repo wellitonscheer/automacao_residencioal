@@ -6,6 +6,7 @@ const aberto = "Aberto";
 const fechado = "Fechado";
 const leftLigado = "69px";
 const leftDesligado = "54px";
+
 //const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
 const linkHeroku = "http://localhost:5000/HelloWorld/acao?path=";
 const linkC = "http://localhost:5000/HelloWorld/";
@@ -15,6 +16,7 @@ function onToggle(abertoFechado) {
         const element = $(this);
         const path = element.css("background-color") === red ? element.attr("id") : "desliga_" + element.attr("id");
         const newColor = element.css("background-color") === red ? blue : red;
+        let acao = element.css("background-color") === red ? 1 : 2; //tem a ver com o banco, 1 = liga luz e 2 = desliga a luz
         //const novoLeft = element.css("background-color") === red ? leftLigado : leftDesligado;
         let estado;
         if(abertoFechado){
@@ -28,6 +30,7 @@ function onToggle(abertoFechado) {
         element.children("span").eq(0).text(estado);
         //console.log(path);
         Chamar_Dados(path);
+        EventoDb(element.attr("name"), acao, document.cookie);
     };
 }
 
@@ -85,7 +88,7 @@ function pegarCor(){
 }
 
 const temperatura1second = window.setInterval(function(){
-    console.log("chamou a funcao")
+    console.log(document.cookie);
     
     fetch(`${linkHeroku}temperatura`, {
         method: "GET",
@@ -100,3 +103,9 @@ const temperatura1second = window.setInterval(function(){
             document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
 },10000)
+
+function EventoDb(componente, acao, usuario){
+    console.log(componente, acao, usuario);
+    //let login = JSON.parse(usuario);
+    console.log(login);
+}

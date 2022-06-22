@@ -1,5 +1,5 @@
-//const linkC = "http://localhost:5000/HelloWorld/";
-const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
+const linkC = "http://localhost:5000/HelloWorld/";
+//const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
 
 $("#loginFor").submit(function(e){
     e.preventDefault();
@@ -20,7 +20,9 @@ $("#loginFor").submit(function(e){
             .then(r => r.json())
             .then(dados => {
                 let dbSenha = dados.resposta[0].senha;
+                let login = dados.resposta[0].login;
                 if(dadosObj.senha == dbSenha){
+                    document.cookie = `usuario=${login}; path=/`;
                     window.location.href = "../sem_imagem.html";
                 }
                 else{
