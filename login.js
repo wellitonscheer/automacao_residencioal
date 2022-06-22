@@ -1,4 +1,5 @@
-const linkC = "http://localhost:5000/HelloWorld/";
+//const linkC = "http://localhost:5000/HelloWorld/";
+const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
 
 function Login(){
     let usuario = document.getElementById("usuario").value;
