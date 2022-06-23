@@ -106,6 +106,16 @@ const temperatura1second = window.setInterval(function(){
 
 function EventoDb(componente, acao, usuario){
     console.log(componente, acao, usuario);
-    //let login = JSON.parse(usuario);
+    fetch(`${linkC}evento?${usuario}&acao=${acao}&item=${componente}`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(r => r.json())
+        .then(dados => {
+            console.log(dados.resposta);
+        });
     console.log(login);
 }
