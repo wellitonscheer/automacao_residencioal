@@ -1,5 +1,5 @@
-const linkC = "http://localhost:5000/HelloWorld/";
-//const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
+//const linkC = "http://localhost:5000/HelloWorld/";
+const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
 
 $("#loginFor").submit(function(e){
     e.preventDefault();

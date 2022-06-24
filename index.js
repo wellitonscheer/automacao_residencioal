@@ -7,9 +7,10 @@ const fechado = "Fechado";
 const leftLigado = "69px";
 const leftDesligado = "54px";
 
-//const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
-const linkHeroku = "http://localhost:5000/HelloWorld/acao?path=";
-const linkC = "http://localhost:5000/HelloWorld/";
+const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
+//const linkHeroku = "http://localhost:5000/HelloWorld/acao?path=";
+//const linkC = "http://localhost:5000/HelloWorld/";
+const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
 
 function onToggle(abertoFechado) {
     return function() {

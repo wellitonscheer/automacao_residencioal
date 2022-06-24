@@ -46,8 +46,19 @@ body {
     font-size: 2rem;
 }
 
-.control.alarme button{
-    background-color: blue;
+.control.rgb input{
+    width: 100px;
+    height: 70px;
+}
+
+#rgb{
+    text-align: center;
+    width: auto;
+}
+
+#divRgb{
+    width: auto;
+    text-align: center;
 }
 
 .table{

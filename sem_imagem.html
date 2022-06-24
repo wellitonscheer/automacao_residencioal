@@ -140,7 +140,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <th>Alarme:</th>
                     <td>
                         <div class="control alarme">
@@ -150,10 +150,22 @@
                             </button>
                         </div>
                     </td>
+                </tr> -->
+                <tr>
+                    <th>
+                        <div id="divRgb">
+                            <span id="rgb">Led RGB: </span>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="control rgb">
+                            <input type="color" id="color" onchange="pegarCor()">
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>
-        <input type="color" id="color" onchange="pegarCor()">
+        <!-- <input type="color" id="color" onchange="pegarCor()"> -->
     </div>
 
 </body>
