@@ -103,7 +103,7 @@ const temperatura1second = window.setInterval(function(){
             //console.log(dados.resposta);
             document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
-},10000)
+},1000)
 
 function EventoDb(componente, acao, usuario){
     console.log(componente, acao, usuario);
