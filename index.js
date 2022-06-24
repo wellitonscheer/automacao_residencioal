@@ -100,10 +100,10 @@ const temperatura1second = window.setInterval(function(){
     })
         .then(r => r.json())
         .then(dados => {
-            console.log(dados.resposta);
+            console.log(dados);
             document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
-},1000)
+},10000)
 
 function EventoDb(componente, acao, usuario){
     console.log(componente, acao, usuario);
