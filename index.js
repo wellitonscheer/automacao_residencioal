@@ -118,5 +118,4 @@ function EventoDb(componente, acao, usuario){
         .then(dados => {
             console.log(dados.resposta);
         });
-    console.log(login);
 }
