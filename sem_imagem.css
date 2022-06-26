@@ -52,13 +52,13 @@ body {
 }
 
 #rgb{
-    text-align: center;
+    text-align: right;
     width: auto;
 }
 
 #divRgb{
     width: auto;
-    text-align: center;
+    text-align: right;
 }
 
 .table{
@@ -79,8 +79,34 @@ body {
     width: 300px;
     text-align: end;
     font-size: 1.8rem;
+
 }
 .table td{
     width: 300px;
     text-align: start;
+}
+
+.logs th{
+    border: 1px solid;
+}
+
+.logs td{
+    border: 1px solid;
+}
+
+.logs{
+    border: 1px solid;
+    width: 100%;
+}
+
+#logs{
+    margin-top: 50px;
+}
+
+#filtros-div{
+    text-align: start;
+}
+
+#tabela{
+    margin-top: 20px;
 }

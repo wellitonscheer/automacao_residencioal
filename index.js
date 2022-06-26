@@ -6,23 +6,25 @@ const aberto = "Aberto";
 const fechado = "Fechado";
 const leftLigado = "69px";
 const leftDesligado = "54px";
+let input = document.getElementById("input-filtro");
+let select = document.getElementById("select-filtro");
 
 const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
 //const linkHeroku = "http://localhost:5000/HelloWorld/acao?path=";
-//const linkC = "http://localhost:5000/HelloWorld/";
-const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
+const linkC = "http://localhost:5000/HelloWorld/";
+//const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
 
 function onToggle(abertoFechado) {
-    return function() {
+    return function () {
         const element = $(this);
         const path = element.css("background-color") === red ? element.attr("id") : "desliga_" + element.attr("id");
         const newColor = element.css("background-color") === red ? blue : red;
         let acao = element.css("background-color") === red ? 1 : 2; //tem a ver com o banco, 1 = liga luz e 2 = desliga a luz
         //const novoLeft = element.css("background-color") === red ? leftLigado : leftDesligado;
         let estado;
-        if(abertoFechado){
+        if (abertoFechado) {
             estado = element.css("background-color") === red ? aberto : fechado;
-        }else{
+        } else {
             estado = element.css("background-color") === red ? ligado : desligado;
             // $(".control.luz-quarto-visita-direita").css("left", novoLeft);
             // // console.log($(".control.luz-quarto-visita-direita").css("left").toString());
@@ -35,7 +37,7 @@ function onToggle(abertoFechado) {
     };
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     $("#fridge").click(onToggle());
     $("#tv-quarto").click(onToggle());
     $("#tv-sala").click(onToggle());
@@ -50,7 +52,7 @@ $(document).ready(function(){
     //$("#alarme").click(pegarCor());
 });
 
-function Chamar_Dados(url){
+function Chamar_Dados(url) {
     fetch(`${linkHeroku}${url}`, {
         method: "GET",
         headers: {
@@ -61,18 +63,18 @@ function Chamar_Dados(url){
         .then(r => r.json())
         .then(dados => {
             //console.log(dados.resposta);
-            document.querySelector("#fridge").innerHTML = dados.resposta;
+            //document.querySelector("#fridge").innerHTML = dados.resposta;
         });
 }
 
 
-function pegarCor(){
+function pegarCor() {
     var hex = document.getElementById("color").value;
     //var hex = "#ff64c8";
-    const Rred = parseInt(hex[1]+hex[2],16);
-    const Ggreen = parseInt(hex[3]+hex[4],16);
-    const Bblue = parseInt(hex[5]+hex[6],16);
-    console.log(Rred,Ggreen,Bblue);
+    const Rred = parseInt(hex[1] + hex[2], 16);
+    const Ggreen = parseInt(hex[3] + hex[4], 16);
+    const Bblue = parseInt(hex[5] + hex[6], 16);
+    console.log(Rred, Ggreen, Bblue);
 
     fetch(`${linkHeroku}led_rgb%26red=${Rred}%26green=${Ggreen}%26blue=${Bblue}`, {
         method: "GET",
@@ -88,9 +90,9 @@ function pegarCor(){
         });
 }
 
-const temperatura1second = window.setInterval(function(){
+const temperatura1second = window.setInterval(function () {
     console.log(document.cookie);
-    
+
     fetch(`${linkHeroku}temperatura`, {
         method: "GET",
         headers: {
@@ -103,9 +105,9 @@ const temperatura1second = window.setInterval(function(){
             console.log(dados);
             document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
         });
-},10000)
+}, 1000000)
 
-function EventoDb(componente, acao, usuario){
+function EventoDb(componente, acao, usuario) {
     console.log(componente, acao, usuario);
     fetch(`${linkC}evento?${usuario}&acao=${acao}&item=${componente}`, {
         method: "GET",
@@ -118,4 +120,80 @@ function EventoDb(componente, acao, usuario){
         .then(dados => {
             console.log(dados.resposta);
         });
+}
+
+function tipoFiltro() {
+    const tipoEscolhidoTag = document.getElementById("filtros");
+    const tipoEscolhido = tipoEscolhidoTag.options[tipoEscolhidoTag.selectedIndex].value;
+    //console.log(tipoEscolhido);
+    modificarInputFiltro(tipoEscolhido);
+}
+
+async function modificarInputFiltro(tipo) {
+    let input = document.getElementById("input-filtro");
+    let select = document.getElementById("select-filtro");
+    function apagaOption(){
+        for(let i = 0; i < select.length+3; i++){
+            select.remove(0);
+        }
+    }
+    switch (tipo) {
+        case "id":
+            $(input).attr("type", "number");
+            select.hidden = true;
+            input.hidden = false;
+            break;
+        case "usuario":
+            input.hidden = true;
+            apagaOption();
+            const usuarios = await filtroDb("filtro_usuario?tabela=usuarios");
+            usuarios.forEach(usuario => {
+                let opcao = document.createElement("option");
+                opcao.value = usuario.id;
+                opcao.text = usuario.nome;
+                select.add(opcao);
+            })
+            select.hidden = false;
+            break;
+        case "componente":
+            input.hidden = true;
+            apagaOption();
+            const componentes = await filtroDb("filtro_componente?tabela=componentes");
+            componentes.forEach(componente => {
+                let opcao = document.createElement("option");
+                opcao.value = componente.id;
+                opcao.text = componente.componentenome;
+                select.add(opcao);
+            })
+            select.hidden = false;
+            break;
+        case "acao":
+            input.hidden = true;
+            apagaOption();
+            const acoes = await filtroDb("filtro_acao?tabela=acoes");
+            acoes.forEach(acao => {
+                let opcao = document.createElement("option");
+                opcao.value = acao.id;
+                opcao.text = acao.descricao;
+                select.add(opcao);
+            })
+            select.hidden = false;
+            break;
+        case "horario":
+            $(input).attr("type", "date");
+            select.hidden = true;
+            input.hidden = false;
+            break;
+    }
+}
+
+function filtroDb(query) {
+    return fetch(`${linkC}${query}`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(r => r.json()).then(x => x.resposta);
 }

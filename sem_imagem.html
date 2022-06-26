@@ -22,7 +22,7 @@
     <title>Painel de controle</title>
 
 </head>
-<body class="justify-content-center">
+<body>
     <div class="container-fluid" >
         <div class="meu_container">
             <br/>
@@ -32,57 +32,13 @@
             <br/>   
 
             <table class="table">
-                <tr>
+                <!-- <tr>
                     <th>Clicou no:</th>
                     <td>
                         <div class="control fridge">
                             <button id="fridge">
-                                <!-- <span>Desligado</span>
-                                <i class="bi bi-snow"></i> -->
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <!-- <tr>
-                    <th>TV quarto:</th>
-                    <td>
-                        <div class="control tv-quarto">
-                            <button id="tv-quarto">
                                 <span>Desligado</span>
-                                <i class="bi bi-display-fill"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>TV sala:</th>
-                    <td>
-                        <div class="control tv-sala">
-                            <button id="tv-sala">
-                                <span>Desligado</span>
-                                <i class="bi bi-display-fill"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>TV quarto visita:</th>
-                    <td>
-                        <div class="control tv-quarto-visita">
-                            <button id="tv-quarto-visita">
-                                <span>Desligado</span>
-                                <i class="bi bi-display-fill"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Porta garagem:</th>
-                    <td>
-                        <div class="control porta-garagem">
-                            <button id="porta-garagem">
-                                <span>Fechado</span>
-                                <i class="bi bi-door-closed-fill"></i>
+                                <i class="bi bi-snow"></i>
                             </button>
                         </div>
                     </td>
@@ -120,17 +76,6 @@
                         </div>
                     </td>
                 </tr>
-                <!-- <tr>
-                    <th>Luz quarto visita:</th>
-                    <td>
-                        <div class="control luz-quarto-visita-esquerda">
-                            <button id="luz-quarto-visita-esquerda">
-                                <span>Desligado</span>
-                                <i class="bi bi-lightbulb-fill"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr> -->
                 <tr>
                     <th>Temperatura:</th>
                     <td>
@@ -142,17 +87,6 @@
                         </div>
                     </td>
                 </tr>
-                <!-- <tr>
-                    <th>Alarme:</th>
-                    <td>
-                        <div class="control alarme">
-                            <button id="alarme">
-                                <span></span>
-                                <i class="bi bi-bell-fill"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr> -->
                 <tr>
                     <th>
                         <div id="divRgb">
@@ -167,7 +101,53 @@
                 </tr>
             </table>
         </div>
-        <!-- <input type="color" id="color" onchange="pegarCor()"> -->
+        <div id="logs">
+            <h1>Relatórios</h1>
+            <div id="filtros-div">
+                <div>
+                    <h3 id="filtros-text"><b>Filtros:</b></h3>
+
+                    <span>Tipo:</span>
+                    <select name="filtros" id="filtros" onchange="tipoFiltro()">
+                        <option value="id">ID</option>
+                        <option value="usuario">Usuário</option>
+                        <option value="componente">Componente</option>
+                        <option value="acao">Ação</option>
+                        <option value="horario">Horário</option>
+                    </select>
+
+                    <span>Valor:</span>
+                    <input type="number" id="input-filtro">
+                    <select name="" id="select-filtro" hidden></select>
+                </div>
+                
+            </div>
+            <div id="tabela">
+                <table id="relatorios" class="logs">
+                    <tr>
+                        <th>ID Alteração</th>
+                        <th>Ação</th>
+                        <th>Usuário</th>
+                        <th>Componente</th>
+                        <th>Horário</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 
 </body>
