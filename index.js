@@ -197,3 +197,16 @@ function filtroDb(query) {
     })
         .then(r => r.json()).then(x => x.resposta);
 }
+
+function ImprimeRelatorio(){
+    let input = document.getElementById("input-filtro");
+    let select = document.getElementById("select-filtro");
+    let filtro;
+    if(input.hidden){
+        filtro = select.options[select.selectedIndex].value;
+        console.log(filtro);
+    }
+    else{
+        console.log(input.value);
+    }
+}

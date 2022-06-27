@@ -110,3 +110,7 @@ body {
 #tabela{
     margin-top: 20px;
 }
+
+#imprimir{
+    text-align: end;
+}
