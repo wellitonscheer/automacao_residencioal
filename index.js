@@ -6,8 +6,6 @@ const aberto = "Aberto";
 const fechado = "Fechado";
 const leftLigado = "69px";
 const leftDesligado = "54px";
-let input = document.getElementById("input-filtro");
-let select = document.getElementById("select-filtro");
 
 const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
 //const linkHeroku = "http://localhost:5000/HelloWorld/acao?path=";
@@ -122,11 +120,17 @@ function EventoDb(componente, acao, usuario) {
         });
 }
 
-function tipoFiltro() {
+function tipoFiltro(doHtml) {
     const tipoEscolhidoTag = document.getElementById("filtros");
     const tipoEscolhido = tipoEscolhidoTag.options[tipoEscolhidoTag.selectedIndex].value;
     //console.log(tipoEscolhido);
-    modificarInputFiltro(tipoEscolhido);
+    if(doHtml){
+        modificarInputFiltro(tipoEscolhido);
+    }
+    else{
+        ImprimeRelatorio(tipoEscolhido);
+    }
+    
 }
 
 async function modificarInputFiltro(tipo) {
@@ -198,15 +202,60 @@ function filtroDb(query) {
         .then(r => r.json()).then(x => x.resposta);
 }
 
-function ImprimeRelatorio(){
-    let input = document.getElementById("input-filtro");
+function relatorioDb(filtro) {
+    return fetch(`${linkC}relatorio?filtro=${filtro}`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(r => r.json()).then(x => x.resposta);
+}
+
+async function ImprimeRelatorio(tipoFiltro){
+    //let excluiTabela = document.getElementById("relatorios");
+    $("#relatorios tr").remove();
+    let filtroInput = document.getElementById("input-filtro").value;
     let select = document.getElementById("select-filtro");
-    let filtro;
-    if(input.hidden){
-        filtro = select.options[select.selectedIndex].value;
-        console.log(filtro);
+    let filtroSelect;
+    let where = "";
+    switch (tipoFiltro) {
+        case "id":
+            where = "where e.id = " + filtroInput;
+            break;
+        case "usuario":
+            filtroSelect = select.options[select.selectedIndex].value;
+            where = "where e.pessoa = " + filtroSelect;
+            break;
+        case "componente":
+            filtroSelect = select.options[select.selectedIndex].value;
+            where = "where e.componente = " + filtroSelect;
+            break;
+        case "acao":
+            filtroSelect = select.options[select.selectedIndex].value;
+            where = "where e.acao = " + filtroSelect;
+            break;
+        case "horario":
+            where = `where date(e.tempo) = \'${filtroInput}\'`;
+            break;
     }
-    else{
-        console.log(input.value);
+    if(!filtroInput && !filtroSelect){
+        where = "";
     }
+    criarTituloTabela();
+    let tabela = document.getElementById("relatorios")
+    const componentes = await relatorioDb(where);
+    componentes.forEach(x => {
+        let linha = document.createElement("tr");
+        $(linha).append(`<td>${x.id}</td> <td>${x.descricao}</td> <td>${x.nome}</td> <td>${x.componentenome}</td> <td>${new Date(x.tempo).toLocaleString("pt-BR", {timeZone:"America/Sao_Paulo"})}</td>`);
+        $(tabela).append(linha);
+    });
+}
+
+function criarTituloTabela(){
+    let tabela = document.getElementById("relatorios")
+    let colunaTitulo = document.createElement("tr");
+    $(colunaTitulo).append("<th class='titulo-tabela'>ID Alteração</th> <th class='titulo-tabela'>Ação</th> <th class='titulo-tabela'>Usuário</th> <th class='titulo-tabela'>Componente</th> <th class='titulo-tabela'>Horário</th>");
+    $(tabela).append(colunaTitulo);
 }

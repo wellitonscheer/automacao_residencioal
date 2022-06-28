@@ -108,7 +108,7 @@
                     <h3 id="filtros-text"><b>Filtros:</b></h3>
 
                     <span>Tipo:</span>
-                    <select name="filtros" id="filtros" onchange="tipoFiltro()">
+                    <select name="filtros" id="filtros" onchange="tipoFiltro(true)">
                         <option value="id">ID</option>
                         <option value="usuario">Usuário</option>
                         <option value="componente">Componente</option>
@@ -121,33 +121,12 @@
                     <select name="" id="select-filtro" hidden></select>
                 </div>
                 <div id="imprimir">
-                    <button onclick="ImprimeRelatorio()">Gerar Relatório</button>
+                    <button onclick="tipoFiltro(false)">Gerar Relatório</button>
                 </div>
                 
             </div>
             <div id="tabela">
                 <table id="relatorios" class="logs">
-                    <tr>
-                        <th>ID Alteração</th>
-                        <th>Ação</th>
-                        <th>Usuário</th>
-                        <th>Componente</th>
-                        <th>Horário</th>
-                    </tr>
-                    <tr>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
-                        <td>Germany</td>
-                        <td>Germany</td>
-                        <td>Germany</td>
-                    </tr>
-                    <tr>
-                        <td>Centro comercial Moctezuma</td>
-                        <td>Francisco Chang</td>
-                        <td>Mexico</td>
-                        <td>Germany</td>
-                        <td>Germany</td>
-                    </tr>
                 </table>
             </div>
         </div>

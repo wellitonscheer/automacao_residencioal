@@ -114,3 +114,7 @@ body {
 #imprimir{
     text-align: end;
 }
+
+.titulo-tabela{
+    font-size: 30px;
+}
