@@ -23,7 +23,7 @@ $("#loginFor").submit(function(e){
                 let login = dados.resposta[0].login;
                 if(dadosObj.senha == dbSenha){
                     document.cookie = `usuario=${login}; path=/`;
-                    window.location.href = "../sem_imagem.html";
+                    window.location.href = "sem_imagem.html";
                 }
                 else{
                     window.alert("Senha ou usuario incoretos");
