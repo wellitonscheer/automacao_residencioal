@@ -30,6 +30,7 @@ function onToggle(abertoFechado) {
         element.css("background-color", newColor);
         element.children("span").eq(0).text(estado);
         //console.log(path);
+        usuarioLogado();
         Chamar_Dados(path);
         EventoDb(element.attr("name"), acao, document.cookie);
     };
@@ -49,6 +50,12 @@ $(document).ready(function () {
     //$("#alarme").click(onToggle());
     //$("#alarme").click(pegarCor());
 });
+
+function usuarioLogado(){
+    if(!document.cookie){
+        window.location.href = "loginPronto.html";
+    }
+}
 
 function Chamar_Dados(url) {
     fetch(`${linkHeroku}${url}`, {
