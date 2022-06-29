@@ -22,7 +22,7 @@
     <title>Painel de controle</title>
 
 </head>
-<body onload="usuarioLogado()">
+<body onload="usuarioLogado()" style="background-color: #2ca0d627;">    
     <div class="container-fluid" >
         <div class="meu_container">
             <br/>
@@ -119,10 +119,12 @@
                     <span>Valor:</span>
                     <input type="number" id="input-filtro">
                     <select name="" id="select-filtro" hidden></select>
+
+                    <span id="imprimir">
+                        <button id="button-imprimir" onclick="tipoFiltro(false)">Gerar Relatório</button>
+                    </span>
                 </div>
-                <div id="imprimir">
-                    <button onclick="tipoFiltro(false)">Gerar Relatório</button>
-                </div>
+                
                 
             </div>
             <div id="tabela">
