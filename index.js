@@ -145,7 +145,7 @@ async function modificarInputFiltro(tipo) {
     let input = document.getElementById("input-filtro");
     let select = document.getElementById("select-filtro");
     function apagaOption(){
-        for(let i = 0; i < select.length+3; i++){
+        for(let i = 0; i < select.length+10; i++){
             select.remove(0);
         }
     }
