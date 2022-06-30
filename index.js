@@ -7,10 +7,10 @@ const fechado = "Fechado";
 const leftLigado = "69px";
 const leftDesligado = "54px";
 
-const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
-//const linkHeroku = "http://localhost:5000/HelloWorld/acao?path=";
-//const linkC = "http://localhost:5000/HelloWorld/";
-const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
+//const linkHeroku = "https://apicsharp-cti.herokuapp.com/HelloWorld/acao?path=";
+const linkHeroku = "http://localhost:5000/HelloWorld/acao?path=";
+const linkC = "http://localhost:5000/HelloWorld/";
+//const linkC = "https://apicsharp-cti.herokuapp.com/HelloWorld/";
 
 function onToggle(abertoFechado) {
     return function () {
@@ -96,7 +96,7 @@ function pegarCor() {
 }
 
 const temperatura1second = window.setInterval(function () {
-    console.log(document.cookie);
+    //console.log(document.cookie);
 
     fetch(`${linkHeroku}temperatura`, {
         method: "GET",
@@ -109,8 +109,9 @@ const temperatura1second = window.setInterval(function () {
         .then(dados => {
             console.log(dados);
             document.querySelector("#temperatura").innerHTML = dados.resposta + " ºC";
+            document.querySelector("#umidade").innerHTML = dados.umidade + " %";
         });
-}, 1000000)
+}, 1000)
 
 function EventoDb(componente, acao, usuario) {
     console.log(componente, acao, usuario);
